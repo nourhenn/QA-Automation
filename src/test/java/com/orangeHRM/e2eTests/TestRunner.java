@@ -15,9 +15,9 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 		features = {"src/specs/features"},
 		//glue = {""},
-		plugin = {"pretty", "html:target/cucumber-html-report", "com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-report/orangeHRM.html"},
+		plugin = {"pretty", "html:target/cucumber-html-report","json:target/cucumber.json" ,"com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-report/orangeHRM.html"},
 		snippets = SnippetType.CAMELCASE,
-		tags = {("@connexion")},
+		tags = {("@buzz")},
 		monochrome = true
 		
 		)

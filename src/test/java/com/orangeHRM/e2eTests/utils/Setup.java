@@ -1,9 +1,12 @@
 package com.orangeHRM.e2eTests.utils;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
@@ -18,9 +21,12 @@ public class Setup {
 	/**
 	 * Call browser with a design pattern factory navigator
 	 */
-	public static void setup() {
+	public static void setup() throws InterruptedException {
 		driverManager = DriverManagerFactory.getManager(DriverType.CHROME);
 		driver = driverManager.getDriver();
+		 // implicit wait
+      //  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+     	Thread.sleep(3000);	 
 	}
 
 	@After
